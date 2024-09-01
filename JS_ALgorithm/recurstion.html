@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function recursionFactorialSolution(n){
+            if (n === 0 ){
+                return 1;
+            }
+
+            return n * recursionFactorialSolution(n -1);
+        }
+        document.getElementById('demo').innerHTML = recursionFactorialSolution(3)
+    </script>
+    <p><<<<<<>>>>>><<<<<<><<<<><<<<<<<<<<<<>>>>>>>>>>>>>>><<<<<<<<</p>
+    <p id="demo2"></p>
+    <script>
+        const arr = [1,6,8,18,19,12,10,11];
+
+
+        // let target = arr.indexOf(6);
+        // document.getElementById('demo2').innerHTML = target;
+
+        function findIndex(target){
+            for(let i in arr){
+                    if (arr[i] == target){
+                        return i;
+                    }
+            }
+            return -1;
+        }
+
+        //     for(let i = 0; i<arr.length ; i++){
+        //         if (arr[i] == target){
+        //             return i;
+        //         }
+        //     }
+        //     return -1
+        // }
+
+       document.getElementById('demo2').innerHTML = findIndex(12);
+    </script>
+    <p><<<<>>>>>><<<<<<<>>>>>>>><<<<<<<<<<<<>>>>>>>>>><<<<<<>>>>>>><<<<<<</p>
+    <p>Binary Search it's not working without make the sort , then find the target when i give it the index</p>
+    <p id="demo3"></p>
+    <script>
+        // const arr_number = [4,7,-12,-3,8,17,14,8,10];
+        // let sorted_arr = arr_number.sort();
+        // console.log(sorted_arr)
+        // document.getElementById('demo3').innerHTML = sorted_arr.indexOf(7);
+        // ..............................................................................
+
+   
+        
+    </script>
+</body>
+</html>

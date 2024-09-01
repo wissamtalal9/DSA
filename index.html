@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [1, 2, 3, "Volvo"];
+      arr.push(4); // add in the last array
+      arr.unshift(0); // add item in first array
+      arr.pop(); // delete from the last of array
+      arr.shift(); // delete from first array
+      for (let i of arr) {
+        console.log(i);
+      }
+      // map , filter, reduse, concat, slice & splice
+    </script>
+    <p>>>>>>>>><<<<<<<<<<>>>>>>>>><<<<<<<<<<>>>>>>>>>><<<<<<<<</p>
+    <p id="show"></p>
+    <p itemref="full"></p>
+    <script>
+      const numbers = [4, 9, 16, 25];
+      //   const newArr = numbers.map(Math.sqrt);
+      let newArr = numbers.map(myFunction);
+      function myFunction(value) {
+        return value * 10;
+      }
+      document.getElementById("show").innerHTML = newArr;
+    </script>
+    <p>>>>>>>>>>>>><<<<<<<<<<<<<<<>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<</p>
+    <p>
+      Click "Test" to get every element in the array that has a value above this
+      number:
+    </p>
+
+    <p id="dems"></p>
+    <p><input type="number" id="getAge" value="30" /></p>
+    <button type="button" onclick="myfunctioncheck()">Get Age</button>
+    <script>
+      const ages = [32, 33, 12, 40];
+
+      function checkAge(age) {
+        return age > document.getElementById("getAge").value;
+      }
+
+      function myfunctioncheck() {
+        document.getElementById("dems").innerHTML = ages.filter(checkAge);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // cartesian case
+      function cartesian(arr1, arr2) {
+        const result = [];
+        for (let i in arr1) {
+          for (let j in arr2) {
+            result.push([arr1[i], arr2[j]]);
+          }
+        }
+
+        return result;
+      }
+
+      const arr1 = [1, 2];
+      const arr2 = [3, 4, 5];
+      console.log(cartesian(arr1, arr2));
+    </script>
+    <p>>>>>>><<<<<<<>>>>>>>>><<<<<<<<<>>>>>>>>><<<<<<<<<>>>>>>>>>></p>
+    <script>
+      function climbingstaricase(n) {
+        const noOfWays = [1, 2];
+        for (let i = 2; i < n; i++) {
+          noOfWays[i] = noOfWays[i - 1] + noOfWays[i - 2];
+        }
+
+        return noOfWays[n - 1];
+      }
+
+      console.log(climbingstaricase(1));
+      console.log(climbingstaricase(2));
+      console.log(climbingstaricase(3));
+      console.log(climbingstaricase(4));
+      console.log(climbingstaricase(5));
+    </script>
+  </body>
+</html>

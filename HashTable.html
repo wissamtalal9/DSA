@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Table {
+        constructor(size) {
+          this.table = new Array(size);
+          this.size = size;
+        }
+
+        Hash(key) {
+          let total = 0;
+          for (let i = 0; i < key.length; i++) {
+            total += key.charCodeAt(i);
+          }
+          return total % this.size;
+        }
+
+        set(key, value) {
+          const index = this.Hash(key);
+          // this.table[index] = value;
+          const bucket = this.table[index];
+          if (!bucket) {
+            this.table[index] = [[key, value]];
+          } else {
+            const sameKeyValue = bucket.find((item) => item[0] === key);
+
+            if (sameKeyValue) {
+              sameKeyValue[1] = value;
+            } else {
+              bucket.push([key, value]);
+            }
+          }
+        }
+
+        get(key) {
+          const index = this.Hash(key);
+          const bucket = this.table[index];
+
+          if (bucket) {
+            const sameKeyValue = bucket.find((item) => item[0] === key);
+
+            if (sameKeyValue) {
+              return sameKeyValue[1];
+            }
+          }
+          return undefined;
+        }
+
+        remove(key) {
+          const index = this.Hash(key);
+          const bucket = this.table[index];
+
+          if (bucket) {
+            const sameKeyValue = bucket.find((item) => item[0] === key);
+            if (sameKeyValue) {
+              bucket.splice(bucket.indexOf(sameKeyValue), 1);
+            }
+          }
+        }
+
+        display() {
+          for (let i = 0; i < this.table.length; i++) {
+            if (this.table[i]) {
+              console.log(i, this.table[i]);
+            }
+          }
+        }
+      }
+      const table = new Table(20);
+
+      table.set("name", "Bruce");
+      table.set("age", 25);
+      table.display();
+      console.log(table.get("name"));
+      table.set("mane", "Clark");
+      table.set("name", "Diana");
+      console.log(table.get("mane"));
+      table.remove("name");
+      table.display();
+    </script>
+  </body>
+</html>

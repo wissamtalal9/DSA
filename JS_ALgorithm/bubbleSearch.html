@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function bubblesearch(arr){
+            let swapped
+            do {
+                swapped = false;
+            for(let i=0; i<=arr.length - 1; i++){
+                if(arr[i] > arr[i+1]){
+                    let temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp
+                    swapped = true;
+                }
+            }
+        } while(swapped)
+    }
+
+        const arr = [-12,-20,2,8,20,-4,3,7,8]; 
+        bubblesearch(arr)
+        console.log(arr)
+    </script>
+</body>
+</html>

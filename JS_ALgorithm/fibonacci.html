@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      In the Fibonacci array the default of two value in the first it's const
+      then every number added is sum of the previous 2 number
+    </p>
+    <p id="demo"></p>
+    <script>
+      const fib = [0, 1];
+
+      function Faibonacce(n) {
+        for (let i = 2; i <= n; i++) {
+          fib[i] = fib[i - 1] + fib[i - 2];
+        }
+        return fib;
+      }
+      document.getElementById("demo").innerHTML = Faibonacce(19);
+      // big-0 = o(n)
+    </script>
+    <p>>>>>>><<<<<<<>>>>>>>><<<<<<<>>>>>>><<<<<<<>>>>>>>><<<<<<<<</p>
+    <p>Solve this problem factorial of numer EX : factorial(4) = 4*3*2*1</p>
+    <p id="demo2"></p>
+    <script>
+      function factorial(n) {
+        let fact = 1;
+        for (let i = 2; i <= n; i++) {
+          fact = fact * i;
+        }
+        return fact;
+      }
+      document.getElementById("demo2").innerHTML =
+        factorial(5) + " " + factorial(4);
+      // big-0 = o(n)
+    </script>
+    <p>>>>>>><<<<<<<>>>>>>>>>><<<<<<<>>>>>>>><<<<<<<<>>>>>>>><<<<<</p>
+    <p>
+      Give a natural number n, determine if the number is prime or not
+      is_prime(5) = True (5*1 , 1*5)<br />
+      is prime(4) = false (4*1 , 2*2 , 1*4);<br />
+    </p>
+    <p id="demo3"></p>
+    <script>
+      function isPrime(n) {
+        if (n % 2 == 0) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+      document.getElementById("demo3").innerHTML = isPrime(5);
+      // big-0 = o(n)
+    </script>
+    <p>>>>>><<<<<<<>>>>>>><<<<<<<>>>>>>>><<<<<<>>>>>>><<<<<<<>>>>>>><>>>>>><</p>
+    <p>
+      Give a positive integer 'n' , determine if the number is a power of 2 or
+      not
+    </p>
+    <p id="demo4"></p>
+    <script>
+      function isPowerOfTwoBitWise(n) {
+        if (n < 1) {
+          return false;
+        }
+        return (n & (n - 1)) === 0;
+      }
+      document.getElementById("demo4").innerHTML = isPowerOfTwoBitWise(4);
+      // bi-o = o(1)
+
+      // function isPowerTwo(n){
+      //     if ( n < 1){
+      //          return false;
+      //    }
+      //     while (n > 1){
+      //         if ( n%2 !== 0) {
+      //             return false;
+      //         }
+      //         n = n / 2;
+      //     }
+      //     return true
+      // }
+      // document.getElementById('demo4').innerHTML ='power 8 :' + isPowerTwo(8) + ' ,,,power of 7 : '+isPowerTwo(7);
+      // console.log(isPowerTwo(8));
+      // // big-o = O(long)
+    </script>
+  </body>
+</html>
+
+<script></script>

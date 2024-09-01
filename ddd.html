@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>>>>>>>>>>>>><<<<<<<<<<<<<<<>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<</p>
+    <p>
+      Click "Tsst" to get every element in the array that has a value above this
+      number:
+    </p>
+
+    <p id="dems"></p>
+    <p><input type="number" id="getAge" value="30" /></p>
+    <button type="button" onclick="myfunctioncheck()">Get Age</button>
+    <script>
+      const ages = [32, 33, 12, 40];
+
+      function checkAge(age) {
+        return age > document.getElementById("getAge").value;
+      }
+
+      function myfunctioncheck() {
+        document.getElementById("dems").innerHTML = ages.filter(checkAge);
+      }
+    </script>
+  </body>
+</html>
